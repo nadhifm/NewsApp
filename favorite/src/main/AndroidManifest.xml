@@ -12,7 +12,5 @@
         <dist:fusing dist:include="true" />
     </dist:module>
 
-    <application>
-    </application>
 
 </manifest>
