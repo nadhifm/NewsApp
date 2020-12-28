@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="article_image">Article Image</string>
+    <string name="source">Source</string>
+    <string name="title">Title</string>
+    <string name="date">Date</string>
+</resources>
