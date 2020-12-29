@@ -12,7 +12,7 @@ data class ArticleResponse(
     @field:SerializedName("publishedAt")
     val publishedAt: String? = "",
     @field:SerializedName("title")
-    val title: String? = "",
+    val title: String,
     @field:SerializedName("url")
     val url: String? = "",
     @field:SerializedName("urlToImage")

@@ -17,4 +17,8 @@ interface ArticleDao {
 
     @Update
     fun updateFavoriteArticle(articleEntity: ArticleEntity)
+
+    @Query("DELETE FROM article")
+    suspend fun deleteAllArticle()
+
 }

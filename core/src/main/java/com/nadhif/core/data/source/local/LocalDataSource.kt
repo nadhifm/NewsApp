@@ -8,9 +8,9 @@ class LocalDataSource(private val articleDao: ArticleDao) {
 
     fun getAllArticles(): Flow<List<ArticleEntity>> = articleDao.getAllArticles()
 
-    fun getFavoriteTourism(): Flow<List<ArticleEntity>> = articleDao.getFavoriteArticles()
+    fun getFavoriteArticle(): Flow<List<ArticleEntity>> = articleDao.getFavoriteArticles()
 
-    suspend fun insertTourism(articleList: List<ArticleEntity>) = articleDao.insertArticles(articleList)
+    suspend fun insertArticle(articleList: List<ArticleEntity>) = articleDao.insertArticles(articleList)
 
     fun setFavoriteArticle(article: ArticleEntity, newState: Boolean) {
         article.isFavorite = newState

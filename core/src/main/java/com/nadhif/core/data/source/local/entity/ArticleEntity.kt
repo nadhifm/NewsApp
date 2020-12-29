@@ -7,9 +7,9 @@ import com.nadhif.core.data.source.remote.response.Source
 
 @Entity(tableName = "article")
 data class ArticleEntity(
-    @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "articleId")
-    val articleId: Long = 0,
+    @PrimaryKey
+    @ColumnInfo(name = "title")
+    val title: String,
 
     @ColumnInfo(name = "author")
     val author: String? = "",
@@ -22,9 +22,6 @@ data class ArticleEntity(
 
     @ColumnInfo(name = "publishedAt")
     val publishedAt: String? = "",
-
-    @ColumnInfo(name = "title")
-    val title: String? = "",
 
     @ColumnInfo(name = "url")
     val url: String? = "",

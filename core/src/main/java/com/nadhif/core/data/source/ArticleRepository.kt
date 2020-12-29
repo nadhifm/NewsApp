@@ -25,19 +25,19 @@ class ArticleRepository (
                 }
             }
 
-            override fun shouldFetch(data: List<Article>?): Boolean = data == null || data.isEmpty()
+            override fun shouldFetch(data: List<Article>?): Boolean = data==null || data.isEmpty()
 
             override suspend fun createCall(): Flow<ApiResponse<List<ArticleResponse>>> =
                 remoteDataSource.getAllArticles()
 
             override suspend fun saveCallResult(data: List<ArticleResponse>) {
                 val tourismList = DataMapper.mapResponsesToEntities(data)
-                localDataSource.insertTourism(tourismList)
+                localDataSource.insertArticle(tourismList)
             }
         }.asFlow()
 
     override fun getFavoriteArticle(): Flow<List<Article>> {
-        return localDataSource.getFavoriteTourism().map {
+        return localDataSource.getFavoriteArticle().map {
             DataMapper.mapEntitiesToDomain(it)
         }
     }

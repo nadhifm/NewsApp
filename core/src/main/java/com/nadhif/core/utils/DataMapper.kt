@@ -27,7 +27,6 @@ object DataMapper {
     fun mapEntitiesToDomain(input: List<ArticleEntity>): List<Article> =
         input.map {
             Article(
-                articleId = it.articleId,
                 description = it.description,
                 author = it.author,
                 content = it.content,
@@ -41,7 +40,6 @@ object DataMapper {
         }
 
     fun mapDomainToEntity(input: Article) = ArticleEntity(
-        articleId = input.articleId,
         description = input.description,
         author = input.author,
         content = input.content,
