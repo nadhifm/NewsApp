@@ -8,6 +8,8 @@ import com.nadhif.core.data.source.remote.RemoteDataSource
 import com.nadhif.core.data.source.remote.network.ApiService
 import com.nadhif.core.domain.repository.IArticleRepository
 import com.nadhif.core.utils.AppExecutors
+import net.sqlcipher.database.SQLiteDatabase
+import net.sqlcipher.database.SupportFactory
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.android.ext.koin.androidContext
@@ -19,10 +21,14 @@ import java.util.concurrent.TimeUnit
 val databaseModule = module {
     factory { get<AppDatabase>().articleDao() }
     single {
+        val passphrase: ByteArray = SQLiteDatabase.getBytes("nadhif".toCharArray())
+        val factory = SupportFactory(passphrase)
         Room.databaseBuilder(
             androidContext(),
             AppDatabase::class.java, "article.db"
-        ).fallbackToDestructiveMigration().build()
+        ).fallbackToDestructiveMigration()
+            .openHelperFactory(factory)
+            .build()
     }
 }
 
