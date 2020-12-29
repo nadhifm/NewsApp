@@ -1,2 +1,2 @@
 # NewsApp
-[![nadhifm](https://app.circleci.com/pipelines/github/nadhifm/NewsApp.svg?style=svg)](https://app.circleci.com/pipelines/github/nadhifm/NewsApp)
+[![nadhifm](https://circleci.com/gh/nadhifm/NewsApp.svg?style=svg)](https://circleci.com/gh/nadhifm/NewsApp)
